@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack",
-    "build": "webpack --mode production",    
+    "build": "webpack --mode production",
     "start": "concurrently \"webpack-dev-server --mode development --open\" \"json-server --watch db.json\""
   },
   "author": "",
@@ -25,6 +25,7 @@
     "babel-polyfill": "^6.26.0",
     "fs": "0.0.1-security",
     "graceful-fs": "^4.1.11",
+    "json-server": "^0.14.0",
     "lowdb": "^1.0.0"
   }
 }
