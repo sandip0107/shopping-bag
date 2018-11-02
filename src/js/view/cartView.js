@@ -1,10 +1,10 @@
 const renderCartItem = item => {
 	const markup = `
-    <div class="product">
-    <div class="product-image">
+    <ul class="product">
+    <li class="product-image">
       <img tabindex="0" alt="${item.title}" src="img/${item.image}">
-    </div>
-	<div class="product_details_wrapper">
+    </li>
+	<li class="product_details_wrapper">
     <div class="product-details">
       <div class="product-title" data-button="show" tabindex="0" data-id=${item.id} >${item.title}</div>
       <div class="product-description">
@@ -32,8 +32,8 @@ const renderCartItem = item => {
 			Save For Later
 		  </button>
       </div>
-	</div> 
-  </div>
+	</li> 
+  </ul>
     `
 	const productContainer = document.querySelector('.product-wrapper');
 	productContainer.insertAdjacentHTML('beforeend', markup);
