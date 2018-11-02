@@ -7,49 +7,56 @@
       <link rel="stylesheet" href="css/style.css" type="text/css"/>
    </head>
    <body>
-      <h1 tabindex="0">YOUR SHOPPING BAG</h1>
+      <header><h1 tabindex="0">YOUR SHOPPING BAG</h1></header>
       <div class="shopping-cart">
-         <div class="column-labels">
-            <label class="product-image" tabindex="0">&nbps;</label>
-            <div class="product_details_wrapper">
-               <label class="product-details">Product</label>
-               <label class="product-size">Size</label>
-               <label class="product-quantity">Quantity</label>
-               <label class="product-line-price">Price</label>
-            </div>
-         </div>
-         <div class="product-wrapper">
-         </div>
-         <section class="info-section">
-          <div class="info">
-              <div tabindex="0">Need help or have questions?</div>
-              <p tabindex="0">Call customer service at 1800000000</p>
-              <p ><a tabindex="0" href="#">Chat With one of the stylist</a></p>
-              <p ><a href="#" tabindex="0">See return / exchange policy</a></p>
-          </div>
-          <div class="totals">
-              <div class="totals-item">
+         <ul class="column-labels">
+            <li class="product-image" tabindex="0">&nbps;</li>
+            <li class="product_details_wrapper">
+              <ul>
+               <li class="product-details">Product</li>
+               <li class="product-size">Size</li>
+               <li class="product-quantity">Quantity</li>
+               <li class="product-line-price">Price</li>
+              </ul>
+            </li>
+          </ul>
+         <section class="product-wrapper">
+         </section>
+         <footer class="info-section">
+          <ul class="info">
+              <li tabindex="0">Need help or have questions?</li>
+              <li tabindex="0">Call customer service at 1800000000</li>
+              <li><a tabindex="0" href="#">Chat With one of the stylist</a></li>
+              <li><a href="#" tabindex="0">See return / exchange policy</a></li>
+          </ul>
+          <ul class="totals">
+              <li class="totals-item">
                   <label tabindex="0">ENTER PROMOTION CODE OR GIFT CARD</label>
-                  <div class="totals-value"><input type="text" tabindex="0"/> <button>Apply</button></div>
-                </div>
-              <div class="totals-item">
+                  <div class="totals-value">
+                      <form action="" method="" id="PromoForm">
+                        <input type="text" tabindex="0"/>
+                      </form>                      
+                      <button type="submit" form="PromoForm" value="Apply">Apply</button>
+                  </div>
+                </li>
+              <li class="totals-item">
                 <label tabindex="0">SUBTOTAL</label>
                 <div tabindex="0" class="totals-value" id="cart-subtotal"></div>
-              </div>
-              <div class="totals-item">
+              </li>
+              <li class="totals-item">
                   <label tabindex="0">PROMOTION CODE APPLIED</label>
                   <div tabindex="0" class="totals-value" ><sup>$</sup>0</div>
-                </div>
-              <div class="totals-item">
+                </li>
+              <li class="totals-item">
                 <label tabindex="0">ESTIMATED SHIPPING<br><span>You Qualify for free shipping because your order is over $50.</span></label>
                 <div tabindex="0" class="totals-value" id="cart-shipping">FREE</div>
-              </div>
-              <div class="totals-item totals-item-total">
+              </li>
+              <li class="totals-item totals-item-total">
                 <label tabindex="0">ESTIMATED TOTAL<br><span>Tax will be applied during checkout.</span></label>
                 <div tabindex="0" class="totals-value" id="cart-total"><sup>$</sup></div>
-              </div>
-          </div>
-        </section>
+              </li>
+            </ul>
+        </footer>
          <button tabindex="0" class="checkout"  >CHECKOUT</button>
       </div>
    </body>

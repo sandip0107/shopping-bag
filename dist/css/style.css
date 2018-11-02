@@ -17,6 +17,7 @@ h1 {
 label {
 	color: #666;
 }
+ul,ul li{display: block; padding: 0;margin: 0;}
 
 button {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -168,7 +169,7 @@ button:focus {
 	display: flex;
 }
 
-.column-labels label {
+.column-labels > li {
 	padding-bottom: 15px;
 	margin-bottom: 15px;
 	border-bottom: 4px solid #eee;
@@ -243,6 +244,7 @@ button:focus {
 	width: 80%;
 	color: #666;
 }
+.product_details_wrapper ul{display: flex;width: 100%;}
 
 
 /* Totals section */
@@ -255,6 +257,7 @@ button:focus {
 }
 .totals > .totals-item:first-child {
   border-bottom: 4px solid #eee;
+  padding-top: 5px;
 }
 .totals > .totals-item:first-child label{color:#ccc;}
 .totals .totals-item label {
@@ -274,6 +277,14 @@ button:focus {
 	float: right;
 	width: 50%;
 	text-align: right;
+}
+.totals .totals-item:first-child .totals-value {
+	  
+	  display: flex;
+  }
+.totals-value form{
+width: 71%;
+text-align: center;
 }
 .totals .totals-item .totals-value input {
   width: 50%;
@@ -421,8 +432,8 @@ button:focus {
 .totals{overflow: hidden;}
 .info-section{display: flex;}
 .info-section .info{width: 50%;}
-.info-section div a{color:#aaa;}
-.info-section div{color:#aaa;}
+.info-section li a{color:#aaa;}
+.info-section li{color:#aaa; padding: 5px 0;}
 .info-section .totals{overflow: hidden;width: 50%;font-size: 12px;}
 .totals-item.totals-item-total{font-size: 14px;font-weight: bold; border-top: 1px solid #eee; border-bottom: 4px solid #eee;}
 
