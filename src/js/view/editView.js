@@ -11,33 +11,33 @@ export const renderEditCartItem = (item,action)=> {
       </div>
 	  <div class="product_details_wrapper">
     <div class="product-details">
-      <div class="product-title">${item.title}</div>
-      <div class="product-line-price"><sup>$</sup>${item.price}</div>
+      <div  tabindex="0" class="product-title">${item.title}</div>
+      <div  tabindex="0" class="product-line-price"><sup>$</sup>${item.price}</div>
       <div class="product-color">
 		
         
-      <input type="radio" name="color" id="grey" value="Gray" checked/>
-      <label for="grey"><span class="grey"></span></label>
+      <input type="radio" aria-label="Grey Color Selected" name="color" id="grey" value="Gray" tabindex="0" checked/>
+      <label for="grey" ><span class="grey"></span></label>
       
-      <input type="radio" name="color" id="blue" value="Blue" />
-      <label for="blue"><span class="blue"></span></label>
+      <input type="radio" aria-label="Blue Color Selected" name="color" id="blue" value="Blue"/>
+      <label for="blue" ><span class="blue"></span></label>
       
-      <input type="radio" name="color" id="yellow" value="Yellow" />
-      <label for="yellow"><span class="yellow"></span></label>
+      <input type="radio" aria-label="Yellow Color Selected" name="color" id="yellow" value="Yellow"/>
+      <label for="yellow" ><span class="yellow"></span></label>
         
 	  </div>
 
     <div class="product-size">
-    <select class="size" tabindex="2" autofocus>
+    <select class="size" tabindex="0" aria-label="Size">
         <option>S</option>
         <option>M</option>
         <option>L</option>
     </select>
-    <input class="qty" type="number" value="${item.qty}" min="1" tabindex="3">
+    <input tabindex="0" class="qty" type="number" aria-label="Quantity" value="${item.qty}" min="1" >
     </div>
         
     <div class="product-action">
-    <button class="update-product" data-button="update" id=${item.id} tabindex="4">
+    <button tabindex="0" class="update-product" data-button="update" id=${item.id} >
     ${action} 
     </button>
     
@@ -52,8 +52,7 @@ export const renderEditCartItem = (item,action)=> {
  </div>
     `
 	const productContainer = document.querySelector('body');
-	productContainer.insertAdjacentHTML('beforeend', markup);
-
+  productContainer.insertAdjacentHTML('beforeend', markup);
 }
 
 export const getItemId = () => parseInt(document.querySelector('.update-product').id);

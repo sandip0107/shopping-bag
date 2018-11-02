@@ -2,35 +2,36 @@ const renderCartItem = item => {
 	const markup = `
     <div class="product">
     <div class="product-image">
-      <img alt="${item.title}" src="img/${item.image}">
+      <img tabindex="0" alt="${item.title}" src="img/${item.image}">
     </div>
 	<div class="product_details_wrapper">
     <div class="product-details">
-      <div class="product-title" data-button="show" data-id=${item.id} >${item.title}</div>
+      <div class="product-title" data-button="show" tabindex="0" data-id=${item.id} >${item.title}</div>
       <div class="product-description">
-		<div>Style : ${item.style}</div>
-		<div>Color : ${item.color}</div>
+		<div tabindex="0">Style : ${item.style}</div>
+		<div tabindex="0">Color : ${item.color}</div>
 	  </div>
-	  <div class="product-action">
-		  <button class="edit-product" id=${item.id} data-button="edit" tabindex="1">
-			Edit
-		  </button>
-		  <button class="remove-product" tabindex="1">
-			Remove
-		  </button>
-		  <button class="save-product" tabindex="1">
-			Save For Later
-		  </button>
-      </div>
+	  
     </div>
-    <div class="product-size">${item.size}</div>
-    <div class="product-quantity">
+    <div tabindex="0" class="product-size" aria-label="Size : ${item.size}">${item.size}</div>
+    <div tabindex="0" class="product-quantity" aria-label="Quantity : ${item.qty}">
       <div>${item.qty}</div>
     </div>   
     <div class="product-line-price">
     <div class="actual-price"><sup>${item.actualPrice?"$":""}</sup><del>${item.actualPrice?item.actualPrice:""}</del></div>
-    <div><sup>$</sup>${item.price*item.qty}</div> 
-    </div>
+    <div tabindex="0" aria-label="Price : $ ${item.price*item.qty}"><sup>$</sup>${item.price*item.qty}</div> 
+		</div>
+		<div class="product-action">
+		  <button class="edit-product" id=${item.id} data-button="edit" tabindex="0">
+			Edit
+		  </button>
+		  <button class="remove-product" tabindex="0">
+			Remove
+		  </button>
+		  <button class="save-product" tabindex="0">
+			Save For Later
+		  </button>
+      </div>
 	</div> 
   </div>
     `

@@ -357,7 +357,8 @@ height: 24px;
 /*Color Selector*/
 
 .product-color input[type=radio] {
-	display: none;
+	position: absolute;
+	left: -10000px;
 }
 
 .product-color input[type=radio]:checked+label span {
@@ -384,6 +385,9 @@ input[type=radio]:checked+label .yellow {
 	cursor: pointer;
 }
 
+.product-color label:fpcus {
+	outline: 1px dotted;
+}
 .product-color label:hover span {
 	transform: scale(1.25);
 }

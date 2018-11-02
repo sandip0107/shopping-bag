@@ -51,7 +51,8 @@ const controlUpdateItem = () => {
 		.assign({
 			size: editCartView.getSize(),
 			qty: editCartView.getQty(),
-			color: editCartView.getColor()
+			color: editCartView.getColor(),
+			image: `t-${editCartView.getColor()}.jpg`
 		})
 		.write();
 
