@@ -2,35 +2,35 @@ const renderCartItem = item => {
 	const markup = `
     <ul class="product">
     <li class="product-image">
-      <img tabindex="0" alt="${item.title}" src="img/${item.image}">
+      <img data-button="show" tabindex="0" data-id=${item.id} alt="${item.title}" src="img/${item.image}">
     </li>
 	<li class="product_details_wrapper">
     <div class="product-details">
-      <div class="product-title" data-button="show" tabindex="0" data-id=${item.id} >${item.title}</div>
+      <div class="product-title" tabindex="0" data-button="show" data-id=${item.id} >${item.title}</div>
       <div class="product-description">
-		<div tabindex="0">Style : ${item.style}</div>
-		<div tabindex="0">Color : ${item.color}</div>
+		<div>Style : ${item.style}</div>
+		<div>Color : ${item.color}</div>
 	  </div>
 	  
     </div>
-    <div tabindex="0" class="product-size" aria-label="Size : ${item.size}">${item.size}</div>
-    <div tabindex="0" class="product-quantity" aria-label="Quantity : ${item.qty}">
+    <div class="product-size" aria-label="Size : ${item.size}">${item.size}</div>
+    <div class="product-quantity" aria-label="Quantity : ${item.qty}">
       <div>${item.qty}</div>
     </div>   
     <div class="product-line-price">
     <div class="actual-price"><sup>${item.actualPrice?"$":""}</sup><del>${item.actualPrice?item.actualPrice:""}</del></div>
-    <div tabindex="0" aria-label="Price : $ ${item.price*item.qty}"><sup>$</sup>${item.price*item.qty}</div> 
+    <div aria-label="Price : $ ${item.price*item.qty}"><sup>$</sup>${item.price*item.qty}</div> 
 		</div>
 		<div class="product-action">
-		  <button class="edit-product" id=${item.id} data-button="edit" tabindex="0">
+		  <a href="#" class="edit-product" id=${item.id} data-button="edit">
 			Edit
-		  </button>
-		  <button class="remove-product" tabindex="0">
+		  </a>
+		  <a href="#" class="remove-product">
 			Remove
-		  </button>
-		  <button class="save-product" tabindex="0">
+		  </a>
+		  <a href="#" class="save-product">
 			Save For Later
-		  </button>
+		  </a>
       </div>
 	</li> 
   </ul>

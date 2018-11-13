@@ -1,12 +1,15 @@
-import axios from 'axios';
+import low from 'lowdb';
+import FileSync from 'lowdb/adapters/LocalStorage';
+
 export default class EditCart{
     constructor(id){
-        this.id = id;
+        this.id = parseInt(id);
     }
-    async getItem(){
+    getItem(){
         try{
-        const res = await axios(`http://localhost:3000/items/${this.id}`);
-        this.result = res.data;
+            const adapter = new FileSync('cartData');
+            const db = low(adapter);
+            this.result = db.get('items').find({id: this.id}).value();
         } catch(err){
             alert(err);
         }

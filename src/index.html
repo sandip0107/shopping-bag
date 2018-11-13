@@ -1,16 +1,16 @@
 <!doctype html>
-<html>
+<html lang="en">
    <head>
       <title>Shopping Bag</title>
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="css/style.css" type="text/css"/>
    </head>
    <body>
-      <header><h1 tabindex="0">YOUR SHOPPING BAG</h1></header>
+      <section><h1>YOUR SHOPPING BAG</h1></section>
       <div class="shopping-cart">
          <ul class="column-labels">
-            <li class="product-image" tabindex="0">&nbps;</li>
+            <li class="product-image">&nbps;</li>
             <li class="product_details_wrapper">
               <ul>
                <li class="product-details">Product</li>
@@ -24,40 +24,38 @@
          </section>
          <footer class="info-section">
           <ul class="info">
-              <li tabindex="0">Need help or have questions?</li>
-              <li tabindex="0">Call customer service at 1800000000</li>
-              <li><a tabindex="0" href="#">Chat With one of the stylist</a></li>
-              <li><a href="#" tabindex="0">See return / exchange policy</a></li>
+              <li>Need help or have questions?</li>
+              <li>Call customer service at 1800000000</li>
+              <li><a href="#">Chat With one of the stylist</a></li>
+              <li><a href="#">See return / exchange policy</a></li>
           </ul>
           <ul class="totals">
               <li class="totals-item">
-                  <label tabindex="0">ENTER PROMOTION CODE OR GIFT CARD</label>
+                  <label>ENTER PROMOTION CODE OR GIFT CARD</label>
                   <div class="totals-value">
-                      <form action="" method="" id="PromoForm">
-                        <input type="text" tabindex="0"/>
-                      </form>                      
-                      <button type="submit" form="PromoForm" value="Apply">Apply</button>
+                        <input type="text"/>
+                        <a href="#">Apply</a>
                   </div>
                 </li>
               <li class="totals-item">
-                <label tabindex="0">SUBTOTAL</label>
-                <div tabindex="0" class="totals-value" id="cart-subtotal"></div>
+                <label>SUBTOTAL</label>
+                <div class="totals-value" id="cart-subtotal"></div>
               </li>
               <li class="totals-item">
-                  <label tabindex="0">PROMOTION CODE APPLIED</label>
-                  <div tabindex="0" class="totals-value" ><sup>$</sup>0</div>
+                  <label>PROMOTION CODE APPLIED</label>
+                  <div class="totals-value" ><sup>$</sup>0</div>
                 </li>
               <li class="totals-item">
-                <label tabindex="0">ESTIMATED SHIPPING<br><span>You Qualify for free shipping because your order is over $50.</span></label>
-                <div tabindex="0" class="totals-value" id="cart-shipping">FREE</div>
+                <label>ESTIMATED SHIPPING<br><span>You Qualify for free shipping because your order is over $50.</span></label>
+                <div class="totals-value" id="cart-shipping">FREE</div>
               </li>
               <li class="totals-item totals-item-total">
-                <label tabindex="0">ESTIMATED TOTAL<br><span>Tax will be applied during checkout.</span></label>
-                <div tabindex="0" class="totals-value" id="cart-total"><sup>$</sup></div>
+                <label>ESTIMATED TOTAL<br><span>Tax will be applied during checkout.</span></label>
+                <div class="totals-value" id="cart-total"><sup>$</sup></div>
               </li>
             </ul>
         </footer>
-         <button tabindex="0" class="checkout"  >CHECKOUT</button>
+         <button class="checkout">CHECKOUT</button>
       </div>
    </body>
 </html>

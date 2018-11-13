@@ -1,10 +1,16 @@
+import low from 'lowdb';
+import FileSync from 'lowdb/adapters/LocalStorage';
+
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+
+import 'jquery-ui/ui/widgets/dialog.js';
 import Cart from './models/Cart';
 import EditCart from './models/EditCart';
 import * as cartView from './view/cartView';
 import * as editCartView from './view/editView';
 
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/LocalStorage');
+
 
 
 const state = {};
@@ -14,7 +20,9 @@ const controlCart = async() => {
 	state.cart = new Cart();
 
 	await state.cart.getResults();
-	window.localStorage.setItem("cartData", JSON.stringify(state.cart));
+	if(window.localStorage.getItem("cartData") == null || window.localStorage.getItem("cartData") == undefined){
+		window.localStorage.setItem("cartData", JSON.stringify(state.cart));
+	}
 	cartView.renderCart(JSON.parse(window.localStorage.getItem("cartData")));
 	cartView.calcCartAndRender(JSON.parse(window.localStorage.getItem("cartData")));;
 }
@@ -27,7 +35,9 @@ window.addEventListener('load', function () {
 const controlEditItem = async(id,action) => {
 	state.editItem = new EditCart(id);
 	await state.editItem.getItem();
-	editCartView.renderEditCartItem(state.editItem.result,action);
+	console.log(state.editItem.result);
+	
+	editCartView.renderEditCartItem(state.editItem.result,action);	
 }
 
 document.querySelector('.product-wrapper').addEventListener('click', e => {
@@ -61,7 +71,7 @@ const controlUpdateItem = () => {
 	ele.parentNode.removeChild(ele);
 	document.querySelector('.product-wrapper').innerHTML = "";
 	cartView.renderCart(JSON.parse(window.localStorage.getItem("cartData")));
-	cartView.calcCartAndRender(JSON.parse(window.localStorage.getItem("cartData")));;
+	cartView.calcCartAndRender(JSON.parse(window.localStorage.getItem("cartData")));
 }
 
 document.querySelector('body').addEventListener('click', e => {
@@ -72,3 +82,4 @@ document.querySelector('body').addEventListener('click', e => {
 		ele.parentNode.removeChild(ele);
 	}
 });
+

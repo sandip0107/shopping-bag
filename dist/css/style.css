@@ -3,34 +3,32 @@
 body {
 	padding: 0px 30px 30px 20px;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  font-size: 13px;
+	font-weight: 100;
+	font-size: 13px;
 }
 
 h1 {
-	font-weight: 100;
 	font-size: 4vw;
 	color: #666;
 	margin-bottom: 30px;
 }
 
+
 label {
 	color: #666;
 }
-ul,ul li{display: block; padding: 0;margin: 0;}
+ul,li{display: block; padding: 0;margin: 0;}
 
-button {
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+.product-action a {
 	background: none;
 	border: navajowhite;
 	color: #aaa;
 	cursor: pointer;
+	padding: 0 5px;
+    text-decoration: none;
 }
 
-button:focus {
-	outline: none;
-}
-
+.ui-dialog-titlebar-close{position: absolute; z-index: 9999;}
 .product-image {
 	width: 20%;
 }
@@ -152,13 +150,6 @@ button:focus {
 	clear: both;
 }
 
-.group,
-.shopping-cart,
-.column-labels,
-.product,
-.totals-item {
-	zoom: 1;
-}
 
 
 
@@ -195,6 +186,7 @@ button:focus {
 
 .product .product-image img {
 	width: 100px;
+	cursor: pointer;
 }
 
 .product .product-details .product-title {
@@ -281,6 +273,7 @@ button:focus {
 .totals .totals-item:first-child .totals-value {
 	  
 	  display: flex;
+	  justify-content: space-between;
   }
 .totals-value form{
 width: 71%;
@@ -291,11 +284,12 @@ text-align: center;
   border: 1px solid #ccc;
   height: 20px;
 }
-.totals .totals-item .totals-value button {
+.totals .totals-item .totals-value a {
 width: 30%;
 border: 1px solid #ccc;
-padding: 1%;
-height: 24px;
+padding: 4px;
+text-align: center;
+text-decoration: none;
 }
 .checkout {
 	float: right;
@@ -426,9 +420,7 @@ label span.yellow {
   color:#666;
 }
 
-button:focus {
-	outline: 1px dotted;
-}
+
 .totals{overflow: hidden;}
 .info-section{display: flex;}
 .info-section .info{width: 50%;}

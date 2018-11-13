@@ -1,7 +1,7 @@
 export const renderEditCartItem = (item,action)=> {
   const markup = `
-  
-    <div class="productEditOverLay">
+    <div  id="dialog" >
+    <div class="productEditOverLay" >
     <div class="product">
     <div class="product-image">
     <img alt="${item.title}" src="img/${item.image}">
@@ -11,33 +11,32 @@ export const renderEditCartItem = (item,action)=> {
       </div>
 	  <div class="product_details_wrapper">
     <div class="product-details">
-      <div  tabindex="0" class="product-title">${item.title}</div>
-      <div  tabindex="0" class="product-line-price"><sup>$</sup>${item.price}</div>
-      <div class="product-color">
-		
+      <div class="product-title">${item.title}</div>
+      <div class="product-line-price"><sup>$</sup>${item.price}</div>
+      <div class="product-color">	
         
-      <input type="radio" aria-label="Grey Color Selected" name="color" id="grey" value="Gray" tabindex="0" checked/>
-      <label for="grey" ><span class="grey"></span></label>
+      <input type="radio" aria-label="Grey Color Selected" name="color" id="grey" value="Gray" ${item.color == 'Gray' ? 'Checked' : 'test'}/>
+      <label for="grey"><span class="grey"></span></label>
       
-      <input type="radio" aria-label="Blue Color Selected" name="color" id="blue" value="Blue"/>
+      <input type="radio" aria-label="Blue Color Selected" name="color" id="blue" value="Blue" ${item.color == 'Blue' ? 'Checked' : 'test'}/>
       <label for="blue" ><span class="blue"></span></label>
       
-      <input type="radio" aria-label="Yellow Color Selected" name="color" id="yellow" value="Yellow"/>
+      <input type="radio" aria-label="Yellow Color Selected" name="color" id="yellow" value="Yellow" ${item.color == 'Yellow' ? 'Checked' : 'test'}/>
       <label for="yellow" ><span class="yellow"></span></label>
         
 	  </div>
 
     <div class="product-size">
-    <select class="size" tabindex="0" aria-label="Size">
-        <option>S</option>
-        <option>M</option>
-        <option>L</option>
+    <select class="size" aria-label="Size" tabIndex=0>
+        <option ${item.size == 'S' ? 'Selected' : 'test'}>S</option>
+        <option ${item.size == 'M' ? 'Selected' : 'test'}>M</option>
+        <option ${item.size == 'L' ? 'Selected' : 'test'}>L</option>
     </select>
-    <input tabindex="0" class="qty" type="number" aria-label="Quantity" value="${item.qty}" min="1" >
+    <input  tabIndex=0 class="qty" type="number" aria-label="Quantity" value="${item.qty}" min="1" >
     </div>
         
     <div class="product-action">
-    <button tabindex="0" class="update-product" data-button="update" id=${item.id} >
+    <button class="update-product" data-button="update" id=${item.id} >
     ${action} 
     </button>
     
@@ -48,11 +47,21 @@ export const renderEditCartItem = (item,action)=> {
  
   </div>
   <div class="overlay"></div>
-  
+  </div>
  </div>
     `
-	const productContainer = document.querySelector('body');
+  $("#dialog").remove();
+  const productContainer = document.querySelector('body');
   productContainer.insertAdjacentHTML('beforeend', markup);
+  $( "#dialog" ).dialog({
+    closeOnEscape: false,
+    open: function(event, ui) {
+        $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+    }
+  });
+  $('input[type=radio][name=color]').change(function() {
+    $(".productEditOverLay img").attr("src","img/t-"+this.value+".jpg");
+  });
 }
 
 export const getItemId = () => parseInt(document.querySelector('.update-product').id);
