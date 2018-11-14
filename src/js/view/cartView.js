@@ -2,11 +2,13 @@ const renderCartItem = item => {
 	const markup = `
     <ul class="product">
     <li class="product-image">
-      <img data-button="show" tabindex="0" data-id=${item.id} alt="${item.title}" src="img/${item.image}">
+			<a href="javascript:void(0)" data-button="show" data-id=${item.id} />
+				<img alt="${item.title}" data-button="show" data-id=${item.id} src="img/${item.image}">
+			</a>
     </li>
 	<li class="product_details_wrapper">
     <div class="product-details">
-      <div class="product-title" tabindex="0" data-button="show" data-id=${item.id} >${item.title}</div>
+      <div class="product-title">${item.title}</div>
       <div class="product-description">
 		<div>Style : ${item.style}</div>
 		<div>Color : ${item.color}</div>
@@ -22,13 +24,13 @@ const renderCartItem = item => {
     <div aria-label="Price : $ ${item.price*item.qty}"><sup>$</sup>${item.price*item.qty}</div> 
 		</div>
 		<div class="product-action">
-		  <a href="#" class="edit-product" id=${item.id} data-button="edit">
+		  <a href="javascript:void(0)" class="edit-product" id=${item.id} data-button="edit">
 			Edit
 		  </a>
-		  <a href="#" class="remove-product">
+		  <a href="javascript:void(0)" class="remove-product" id=${item.id} data-button="remove">
 			Remove
 		  </a>
-		  <a href="#" class="save-product">
+		  <a href="javascript:void(0)" class="save-product">
 			Save For Later
 		  </a>
       </div>

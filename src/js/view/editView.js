@@ -4,11 +4,9 @@ export const renderEditCartItem = (item,action)=> {
     <div class="productEditOverLay" >
     <div class="product">
     <div class="product-image">
-    <img alt="${item.title}" src="img/${item.image}">
-      <button class="remove-product" data-button="close">
-      
-    </button>
-      </div>
+      <img alt="${item.title}" src="img/${item.image}">
+      <button class="remove-product" data-button="close"></button>
+    </div>
 	  <div class="product_details_wrapper">
     <div class="product-details">
       <div class="product-title">${item.title}</div>
@@ -27,18 +25,18 @@ export const renderEditCartItem = (item,action)=> {
 	  </div>
 
     <div class="product-size">
-    <select class="size" aria-label="Size" tabIndex=0>
+    <select class="size" aria-label="Size">
         <option ${item.size == 'S' ? 'Selected' : 'test'}>S</option>
         <option ${item.size == 'M' ? 'Selected' : 'test'}>M</option>
         <option ${item.size == 'L' ? 'Selected' : 'test'}>L</option>
     </select>
-    <input  tabIndex=0 class="qty" type="number" aria-label="Quantity" value="${item.qty}" min="1" >
+    <input class="qty" type="number" aria-label="Quantity" value="${item.qty}" min="1" >
     </div>
         
     <div class="product-action">
-    <button class="update-product" data-button="update" id=${item.id} >
+    <a href="javascript:void(0)" class="update-product" data-button="update" id=${item.id} >
     ${action} 
-    </button>
+    </a>
     
    
     </div>
