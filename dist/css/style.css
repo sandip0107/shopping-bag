@@ -179,7 +179,6 @@ ul,li {
 
 .product .product-image img {
 	width: 100px;
-	cursor: pointer;
 }
 
 .product .product-details .product-title {
@@ -332,7 +331,6 @@ ul,li {
 	left: 0px;
 	position: absolute;
 	background: #ccc;
-	/* opacity: .5; */
 }
 
 .productEditOverLay .product {

@@ -43,9 +43,7 @@ const renderCartItem = item => {
 
 export const renderCart = items => {
 	document.querySelector('.column-labels .product-image').innerHTML = `${items.items.length} ${items.items.length>1?'Items':'Item'}`;
-  items.items.forEach(renderCartItem);
-
-	//document.querySelector('.column-labels .product-image').innerHTML = `${items.items.length} ${items.items.length>1?'Items':'Item'}`;
+	items.items.forEach(renderCartItem);
 }
 
 let total = 0;

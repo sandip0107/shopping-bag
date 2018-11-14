@@ -97,4 +97,3 @@ document.querySelector('body').addEventListener('click', e => {
 		$("#dialog").dialog("close");
 	}
 });
-
