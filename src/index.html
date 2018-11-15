@@ -22,7 +22,7 @@
           </ul>
          <section class="product-wrapper">
          </section>
-         <footer class="info-section">
+         <section class="info-section">
           <ul class="info">
               <li>Need help or have questions?</li>
               <li>Call customer service at 1800000000</li>
@@ -33,8 +33,8 @@
               <li class="totals-item promocode-item">
                   <label>ENTER PROMOTION CODE OR GIFT CARD</label>
                   <div class="totals-value">
-                        <input type="text"/>
-                        <a href="javascript:void(0)">Apply</a>
+                        <input type="text" id="promoCode"/>
+                        <a href="javascript:void(0)" id="applyPromo">Apply</a>
                   </div>
                 </li>
               <li class="totals-item">
@@ -43,7 +43,7 @@
               </li>
               <li class="totals-item">
                   <label>PROMOTION CODE APPLIED</label>
-                  <div class="totals-value" ><sup>$</sup>0</div>
+                  <div class="totals-value" id="promo-total"><sup>$</sup>0</div>
                 </li>
               <li class="totals-item">
                 <label>ESTIMATED SHIPPING<br><span>You Qualify for free shipping because your order is over $50.</span></label>
@@ -54,8 +54,8 @@
                 <div class="totals-value" id="cart-total"><sup>$</sup></div>
               </li>
             </ul>
-        </footer>
-         <a href="" class="checkout">CHECKOUT</a>
+        </section>
+         <a href="javascript:void(0)" class="checkout">CHECKOUT</a>
       </div>
    </body>
 </html>
